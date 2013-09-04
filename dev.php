@@ -9,6 +9,10 @@
 		return 0;
 	}); 
 
+	if (isset($_GET['lang']))
+	{
+		$lang = $_GET['lang'];
+	}
 	// For testing
 	if ( !isset($lang))
 	{
@@ -59,6 +63,8 @@
 	$help_translate = $definitions[0]->help->$lang;
 	$donate = $definitions[0]->donate->$lang;
 	$sendmail = $definitions[0]->sendmail->$lang;
+	$submit = $definitions[0]->submit->$lang;
+
 	if ($lang == "en")
 	{
 		$note_lang = "notes";
@@ -187,7 +193,7 @@
 				<h2><?php echo $whatisthis ?></h2>
 				<p><?php echo $whatisthis1 ?></p>
 				<p><?php echo $whatisthis2 ?></p>
-				<p><?php echo $whatisthis3 ?></p>
+				<p><a target="_blank" href="https://docs.google.com/a/therobb.com/forms/d/1mhr3vaTni5U8PvOdp_NvQ6vKBxNTmJTeKP3VWRuioCE/viewform"><?php echo $submit ?> &raquo;</a></p>
 				<ul>
 					<li><a href="http://robblewis.me/just-delete-me?utm_source=JustDeleteMe&amp;utm_medium=link&amp;utm_campaign=Just+Delete+Me" target="_blank">Read the announcement blog post &raquo;</a></li>
 					<li><a href="http://robblewis.me/24-hours-of-just-delete-me/" target="_blank">See the first-day stats &raquo;</a></li>
@@ -228,6 +234,7 @@
 		        	<li class="fr"><a href="https://github.com/buzzb0x">Ethan Ohayon</a></li>
 		        	<li class="ru"><a href="https://github.com/morozd">morozd</a></li>
 		        	<li class="pt_br"><a href="https://github.com/mkbu95">Matheus Macabu</a></li>
+		        	<li class="cat"><a href="https://github.com/rockbdn">JP Queralt</a></li>
 				</ul>
 			</div><div class="info-block-half">
 				<h2><?php echo $morecontrib; ?></h2>
@@ -298,11 +305,12 @@
 	    <ul class="dropdown-menu">
 	    	<li class="en"><a href="/">English</a></li>
 	        <li class="it"><a href="it.html">Italiano</a></li>
-	    	<li class="de"><a href="de.html">Deutsch <span class="beta">unvollständig</span></a></li>
-	        <li class="fr"><a href="fr.html">Français <span class="beta">incomplète</span></a></li>
-	        <li class="ru"><a href="ru.html">Pусский <span class="beta">неполный</span></a></li>
+	    	<li class="de"><a href="de.html">Deutsch</a></li>
+	        <li class="fr"><a href="fr.html">Français</a></li>
+	        <li class="ru"><a href="ru.html">Pусский</a></li>
 	        <li class="pt_br"><a href="pt_br.html">Português</a></li>
-	        <!-- <li class="es"><a href="es.html">Spanish <span class="beta">incompleto</span></a></li> -->
+	        <li class="es"><a href="es.html">Español</a></li>
+	        <li class="cat"><a href="cat.html">Català</a></li>
 	        <li class="dropdown-divider"></li>
 	        <li class="help"><a target="_blank" href="https://github.com/rmlewisuk/justdelete.me/issues/164"><?php echo $help_translate; ?></a></li>
 	    </ul>
